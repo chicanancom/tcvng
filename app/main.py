@@ -1,7 +1,6 @@
 from fastapi import FastAPI, Request, status
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
-from fastapi.staticfiles import StaticFiles
 from app.db.database import init_db
 from app.api.v1 import forms, fields, submissions
 
@@ -10,14 +9,6 @@ app = FastAPI(
     description="Hệ thống quản lý form đơn giản cho Admin và Nhân viên",
     version="1.0.0"
 )
-
-# Mount static files
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
-
-@app.get("/")
-async def read_index():
-    from fastapi.responses import FileResponse
-    return FileResponse("app/static/index.html")
 
 # Initialize Database on startup
 @app.on_event("startup")

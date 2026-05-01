@@ -18,12 +18,6 @@ docker-compose up --build
 ```
 Hệ thống sẽ tự động cài đặt DB, Migrate bảng và chạy App tại: `http://localhost:8000`
 
-### Bước 2: Tạo dữ liệu mẫu (Seeding)
-Sau khi container đã chạy ổn định, hãy chạy lệnh sau để tạo sẵn 1 Form với đầy đủ các loại Field mẫu:
-```bash
-docker exec -it form_system_app python seed.py
-```
-
 ### Cách 2: Chạy local (Yêu cầu Python 3.10+)
 1. Cài đặt thư viện:
    ```bash
